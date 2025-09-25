@@ -1,10 +1,8 @@
 """
-by sumit kumar
-written by fb.com/sumit.luv
 
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from school import views
 from django.contrib.auth.views import LoginView,LogoutView
 
@@ -83,4 +81,51 @@ urlpatterns = [
 
     path('aboutus', views.aboutus_view),
     path('contactus', views.contactus_view),
+    
+    # Advanced Features URLs
+    path('advanced-analytics', views.advanced_analytics_view, name='advanced-analytics'),
+    
+    # Assignment Management
+    path('teacher-assignments', views.teacher_assignments_view, name='teacher-assignments'),
+    path('create-assignment', views.create_assignment_view, name='create-assignment'),
+    path('student-assignments', views.student_assignments_view, name='student-assignments'),
+    path('submit-assignment/<int:assignment_id>', views.submit_assignment_view, name='submit-assignment'),
+    
+    # Library Management
+    path('library-management', views.library_management_view, name='library-management'),
+    path('add-book', views.add_book_view, name='add-book'),
+    path('borrow-book', views.borrow_book_view, name='borrow-book'),
+    
+    # Event Management
+    path('event-management', views.event_management_view, name='event-management'),
+    path('create-event', views.create_event_view, name='create-event'),
+    
+    # Advanced Search
+    path('advanced-search', views.advanced_search_view, name='advanced-search'),
+    
+    # Bulk Upload
+    path('bulk-upload', views.bulk_upload_view, name='bulk-upload'),
+    
+    # Report Generation
+    path('generate-report', views.generate_report_view, name='generate-report'),
+    
+    # Notifications
+    path('notifications', views.notifications_view, name='notifications'),
+    path('mark-notification-read/<int:notification_id>', views.mark_notification_read, name='mark-notification-read'),
+    
+    # QR Codes
+    path('student-qr-codes', views.student_qr_codes_view, name='student-qr-codes'),
+    
+    # Performance Analytics
+    path('performance-analytics', views.performance_analytics_view, name='performance-analytics'),
+    
+    # System Settings
+    path('system-settings', views.system_settings_view, name='system-settings'),
+    
+    # API Endpoints
+    path('api/dashboard-stats', views.api_dashboard_stats, name='api-dashboard-stats'),
+    path('api/send-notification', views.api_send_notification, name='api-send-notification'),
+    
+    # REST API (commented out for migration creation)
+    # path('', include('school.api_urls')),
 ]
