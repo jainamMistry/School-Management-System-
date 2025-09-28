@@ -13,7 +13,7 @@ redis==3.5.3
 Pillow==8.3.2
 django-filter==2.4.0
 django-crispy-forms==1.11.2
-crispy-bootstrap4==2021.1
+django-crispy-bootstrap4
 reportlab==3.6.8
 openpyxl==3.0.9
 django-ratelimit==3.0.1
